@@ -5,7 +5,6 @@ export function getUser() {
 }
 
 export async function authUser(email, password, type) {
-  console.log('email, password, type', email, password, type);
   let response;
   if (type === 'sign-up') {
     response = await client.auth.signUp({ email, password });
