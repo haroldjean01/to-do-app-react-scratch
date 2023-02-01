@@ -2,7 +2,7 @@ import { Redirect, Route, Switch } from 'react-router-dom';
 import './App.css';
 import Auth from './components/Auth/Auth.js';
 import Header from './components/Header.js';
-import Todo from './components/Todo/Todo.js';
+import item from './components/item/item.js';
 import { useUser } from './context/UserContext.js';
 
 function App() {
@@ -11,10 +11,10 @@ function App() {
     <div className="App">
       <Switch>
         <Route exact path="/auth/:type" component={Auth} />
-        <Route exact path="/todo" component={Todo} />
+        <Route exact path="/item" component={item} />
         <Route exact path="/" />
         <>
-          {user && <Redirect to="/todo" />}
+          {user && <Redirect to="/item" />}
           {!user && <Redirect to="/auth/sign-in" />}
         </>
       </Switch>
